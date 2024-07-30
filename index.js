@@ -2,8 +2,8 @@
 // base case is n < 2 return n
 
 function merge(array1, array2) {
-   m = array1.length - 1;
-   n = array2.length - 1;
+   m = array1.length;
+   n = array2.length;
    i = 0;
    j = 0;
    k = 0;
@@ -20,12 +20,18 @@ function merge(array1, array2) {
          k++;
       }
    }
-   for(i; i < m; i++) {
+   for (i; i < m; i++) {
       newArray[k] = array1[i];
       k++;
    }
-   for(j; j < m; j++) {
+   for (j; j < m; j++) {
       newArray[k] = array2[j];
       k++;
    }
+
+   return newArray;
 }
+
+let array = merge([3, 8, 15, 22, 45], [4, 10, 18, 29, 56]);
+
+console.log(array);
